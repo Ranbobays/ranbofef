@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('foto/hangat.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .anime-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .anime-list li {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            position: relative;
+        }
+
+        .anime-list li:hover {
+            transform: scale(1.05);
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .anime-list img {
+            width: 100%;
+            height: 100%;
+            max-width: 200px;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .title {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .details {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .details video {
+            width: 100%;
+            max-width: 300px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .details p {
+            margin: 10px 0;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .details button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff7f50;
+            color: #fff;
+            transition: background 0.3s;
+        }
+
+        .details button:hover {
+            background-color: #ff6347;
+        }
+
+        @media (min-width: 768px) {
+            .anime-list li {
+                width: 300px;
+            }
+
+            .details video {
+                max-width: 400px;
+            }
+
+            .anime-list img {
+                max-width: 300px;
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="anime-list">
+          
+            <li onclick="toggleDetails('sousou_no_frieren')">
+                <img src="foto/FRIEREN • FERN • STARK.jpeg" alt="Sousou No Frieren">
+                <span class="title">Sousou No Frieren</span>
+                <div id="sousou_no_frieren" class="details">
+                    <p class="description">Rekomendasi karena mirip cewek Indo.</p>
+                    <video id="video_sousou_no_frieren" controls autoplay muted>
+                        <source src="vedio/friren.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button onclick="openLink('https://anoboy.baby/2023/09/sousou-no-frieren/')">Go to URL</button>
+                </div>
+             <li onclick="toggleDetails('dosanko_gal_wa_namara_menkoi')">
+                <img src="foto/Dosanko Gal wa Namara Menkoi (2024) _ angelinava's Blog.jpeg" alt="Dosanko Gal Wa Namara Menkoi">
+                <span class="title">Dosanko Gal Wa Namara Menkoi</span>
+                <div id="dosanko_gal_wa_namara_menkoi" class="details">
+                    <p class="description">tobrut semua bjirr</p>
+                    <video id="video_dosanko_gal_wa_namara_menkoi" controls autoplay muted>
+                        <source src="vedio/ssstik.io_1721101150523.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button onclick="openLink('https://example.com/dosanko-gal-wa-namara-menkoi')">Go to URL</button>
+                </div>
+            </li>
+            <li onclick="toggleDetails('oroka_na_tenshi_wa_akuma_to_odoru')">
+                <img src="foto/Oroka na Tenshi wa Akuma to Odoru.jpeg" alt="Oroka Na Tenshi Wa Akuma To Odoru">
+                <span class="title">Oroka Na Tenshi Wa Akuma To Odoru</span>
+                <div id="oroka_na_tenshi_wa_akuma_to_odoru" class="details">
+                    <p class="description">romance kenak sih beda ras</p>
+                    <video id="video_oroka_na_tenshi_wa_akuma_to_odoru" controls autoplay muted>
+                        <source src="vedio/oalah.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button onclick="openLink('https://example.com/oroka-na-tenshi-wa-akuma-to-odoru')">Go to URL</button>
+                </div>
+            </li>
+            <li onclick="toggleDetails('kusuriya_no_hitorigoto')">
+                <img src="foto/Bot Verification.jpeg" alt="Kusuriya No Hitorigoto">
+                <span class="title">Kusuriya No Hitorigoto</span>
+                <div id="kusuriya_no_hitorigoto" class="details">
+                    <p class="description">maomao mcnya imut bet sama alurnya gg bet</p>
+                    <video id="video_kusuriya_no_hitorigoto" controls autoplay muted>
+                        <source src="vedio/ssstik.io_@gffubuki_1721101316961.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button onclick="openLink('https://example.com/kusuriya-no-hitorigoto')">Go to URL</button>
+                </div>
+            </li>
+            <li onclick="toggleDetails('mashle')">
+                <img src="foto/download (1).jpeg" alt="Mashle">
+                <span class="title">Mashle</span>
+                <div id="mashle" class="details">
+                    <p class="description">bim bam bim bam bam</p>
+                    <video id="video_mashle" controls autoplay muted>
+                        <source src="vedio/ssstik.io_@chin.oniisan_1721101455489.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button onclick="openLink('https://example.com/mashle')">Go to URL</button>
+                </div>
+            </li>
+            <li onclick="toggleDetails('bucchigiri')">
+                <img src="foto/download (2).jpeg" alt="Bucchigiri">
+                <span class="title">Bucchigiri</span>
+                <div id="bucchigiri" class="details">
+                    <p class="description">ada roh di dalam bjirr</p>
+                    <video id="video_bucchigiri" controls autoplay muted>
+                        <source src="vedio/tumbuk ham.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button onclick="openLink('https://example.com/bucchigiri')">Go to URL</button>
+                </div>
+            </li>
+            <li onclick="toggleDetails('Oregairu')">
+                <img src="foto/oregairu.jpeg" alt="Oregairu">
+                <span class="title">Oregairu</span>
+                <div id="Oregairu" class="details">
+                    <p class="description">Kek gua bet</p>
+                    <video id="video_Oregairu" controls autoplay muted>
+                        <source src="vedio/oregairu.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button onclick="openLink('https://example.com/boku-no-kokoro-no-yabai-yatsu')">Go to URL</button>
+                </div>
+            </li>
+        </li>
+        <li onclick="toggleDetails('jujutsu_kaisen')">
+            <img src="foto/Jujutsu kaisen.jpeg" alt="Jujutsu Kaisen">
+            <span class="title">Jujutsu Kaisen</span>
+            <div id="jujutsu_kaisen" class="details">
+                <p class="description">Dingin tapi tidak kejam.</p>
+                <video id="video_jujutsu_kaisen" controls autoplay muted>
+                    <source src="vedio/ssstik.io_@awilern_1721050171378.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button onclick="openLink('https://anoboy.baby/2023/09/jujutsu-kaisen/')">Go to URL</button>
+            </div>
+        </li>
+        <li onclick="toggleDetails('sasaki_to_pii_chan')">
+            <img src="foto/Сасаки и Пи _ Sasaki to Pii-chan 2024.jpeg" alt="Sasaki To Pii-Chan">
+            <span class="title">Sasaki To Pii-Chan</span>
+            <div id="sasaki_to_pii_chan" class="details">
+                <p class="description">Anime tentang Sasaki dan Pii-Chan.</p>
+                <video id="video_sasaki_to_pii_chan" controls autoplay muted>
+                    <source src="vedio/pii chan.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button onclick="openLink('https://link-ke-sasaki-to-pii-chan.com')">Go to URL</button>
+            </div>
+        </li>
+
+            <!-- Add more anime list items here -->
+        </ul>
+    </div>
+    <script>
+        let currentDetails = null;
+        let currentVideo = null;
+
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            const video = details.querySelector('video');
+
+            if (currentDetails && currentDetails !== details) {
+                hideDetails(currentDetails);
+            }
+
+            if (details.style.display === "none" || details.style.display === "") {
+                showDetails(details);
+                playVideo(video);
+            } else {
+                hideDetails(details);
+                stopVideo(video);
+            }
+
+            currentDetails = details;
+            currentVideo = video;
+        }
+
+        function showDetails(details) {
+            details.style.display = "flex";
+        }
+
+        function hideDetails(details) {
+            details.style.display = "none";
+            if (currentVideo) {
+                currentVideo.pause();
+                currentVideo.currentTime = 0;
+            }
+        }
+
+        function playVideo(video) {
+            video.muted = false;
+            video.play();
+        }
+
+        function stopVideo(video) {
+            video.pause();
+            video.currentTime = 0;
+            video.muted = true; // Mute the video when stopping
+        }
+
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
