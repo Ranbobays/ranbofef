@@ -36,7 +36,7 @@
             cursor: pointer;
             transition: transform 0.3s, background 0.3s;
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* Added overflow to prevent child elements from overflowing */
         }
 
         .anime-list li:hover {
@@ -193,47 +193,98 @@
                         <source src="vedio/tumbuk ham.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <button onclick="openLink('https://example
-                    if (currentDetails && currentDetails !== details) {
-            hideDetails(currentDetails);
+                    <button onclick="openLink('https://example.com/bucchigiri')">Go to URL</button>
+                </div>
+            </li>
+            <li onclick="toggleDetails('Oregairu')">
+                <img src="foto/oregairu.jpeg" alt="Oregairu">
+                <span class="title">Oregairu</span>
+                <div id="Oregairu" class="details">
+                    <p class="description">Kek gua bet</p>
+                    <video id="video_Oregairu" controls autoplay muted>
+                        <source src="vedio/oregairu.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button onclick="openLink('https://example.com/oregairu')">Go to URL</button>
+                </div>
+            </li>
+            <li onclick="toggleDetails('jujutsu_kaisen')">
+                <img src="foto/Jujutsu kaisen.jpeg" alt="Jujutsu Kaisen">
+                <span class="title">Jujutsu Kaisen</span>
+                <div id="jujutsu_kaisen" class="details">
+                    <p class="description">Dingin tapi tidak kejam.</p>
+                    <video id="video_jujutsu_kaisen" controls autoplay muted>
+                        <source src="vedio/ssstik.io_@awilern_1721050171378.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button onclick="openLink('https://anoboy.baby/2023/09/jujutsu-kaisen/')">Go to URL</button>
+                </div>
+            </li>
+            <li onclick="toggleDetails('sasaki_to_pii_chan')">
+                <img src="foto/Sasaki и Пи _ Sasaki to Pii-chan 2024.jpeg" alt="Sasaki To Pii-Chan">
+                <span class="title">Sasaki To Pii-Chan</span>
+                <div id="sasaki_to_pii_chan" class="details">
+                    <p class="description">Anime tentang Sasaki dan Pii-Chan.</p>
+                    <video id="video_sasaki_to_pii_chan" controls autoplay muted>
+                        <source src="vedio/pii chan.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button onclick="openLink('https://link-ke-sasaki-to-pii-chan.com')">Go to URL</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let currentDetails = null;
+        let currentVideo = null;
+
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            const video = details.querySelector('video');
+
+            if (currentDetails && currentDetails !== details) {
+                hideDetails(currentDetails);
+            }
+
+            if (details.style.display === "none" || details.style.display === "") {
+                showDetails(details);
+                playVideo(video);
+            } else {
+                hideDetails(details);
+                stopVideo(video);
+            }
+
+            currentDetails = details;
+            currentVideo = video;
         }
 
-        if (details.style.display === "none" || details.style.display === "") {
-            showDetails(details);
-            playVideo(video);
-        } else {
-            hideDetails(details);
-            stopVideo(video);
+        function showDetails(details) {
+            details.style.display = "flex";
         }
 
-        currentDetails = details;
-        currentVideo = video;
-    }
-
-    function showDetails(details) {
-        details.style.display = "flex";
-    }
-
-    function hideDetails(details) {
-        details.style.display = "none";
-        if (currentVideo) {
-            currentVideo.pause();
-            currentVideo.currentTime = 0;
+        function hideDetails(details) {
+            details.style.display = "none";
+            if (currentVideo) {
+                currentVideo.pause();
+                currentVideo.currentTime = 0;
+            }
         }
-    }
 
-    function playVideo(video) {
-        video.muted = false;
-        video.play();
-    }
+        function playVideo(video) {
+            video.muted = false;
+            video.play();
+        }
 
-    function stopVideo(video) {
-        video.pause();
-        video.currentTime = 0;
-        video.muted = true; // Mute the video when stopping
-    }
+        function stopVideo(video) {
+            video.pause();
+            video.currentTime = 0;
+            video.muted = true; // Mute the video when stopping
+        }
 
-    function openLink(url) {
-        window.open(url, '_blank');
-    }
-</script>
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
