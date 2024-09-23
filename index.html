@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><B>Pengcek Kelulusan</B></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop class="background-video">
+        <source src="friren.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="form-group">
+        <h2>Semoga berbahagia</h2>
+        <div class="login-box"> <!-- Tambahkan div untuk box login -->
+            <form action="proses.php" method="get">
+                <form method="POST" netlify="true"></form>
+                <fieldset>
+                    <legend>Login</legend>
+                    <p>
+                        <label>Username</label>
+                        <input type="text" name="username" placeholder="Masukkan Username" required>
+                    </p>
+                    <p>
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="Masukkan Password" required>
+                    </p>
+                    <p>
+                        <button type="submit">Login</button> <!-- Tombol untuk submit -->
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
